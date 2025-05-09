@@ -37,7 +37,7 @@ Dengan semakin banyaknya film baru yang dirilis setiap tahunnya, pengguna dapat 
 1. Mengembangkan model Content-Based Filtering untuk memberikan rekomendasi film berdasarkan genre dan tag.
 2. Mengembangkan model Collaborative Filtering untuk memberikan rekomendasi film berdasarkan perilaku pengguna lain yang mirip.
 
-### Solution Approach:
+### Solution Statements:
 
 * **Content-Based Filtering:** Menggunakan teknik TF-IDF untuk merepresentasikan konten film dan menghitung kemiripan menggunakan Cosine Similarity.
 * **Collaborative Filtering:** Menggunakan model neural network sederhana dengan embedding layer untuk merekomendasikan film berdasarkan rating pengguna.
