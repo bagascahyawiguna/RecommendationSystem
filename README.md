@@ -64,7 +64,7 @@ Dataset ini terdiri dari empat file utama, masing-masing memiliki struktur dan i
 
 ### 2. `ratings.csv`
 
-* **Ukuran data**: 1.000.209 baris × 4 kolom
+* **Ukuran data**: 100.836 baris × 4 kolom
 * **Fitur**:
 
   * `userId`: ID unik pengguna.
@@ -79,7 +79,7 @@ Dataset ini terdiri dari empat file utama, masing-masing memiliki struktur dan i
 
 ### 3. `tags.csv`
 
-* **Ukuran data**: 368.3 ribu baris × 4 kolom
+* **Ukuran data**: 3683 baris × 4 kolom
 * **Fitur**:
 
   * `userId`: ID pengguna yang memberikan tag.
