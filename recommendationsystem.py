@@ -315,22 +315,25 @@ def movie_recommendations(movie_title, similarity_data=cosine_sim_df, items=movi
     closest = closest.drop(movie_title, errors='ignore')
     return pd.DataFrame(closest).merge(items).head(k)
 
+def precision_at_k_by_genre(query_title, k=10):
+    query_genre = movies_content[movies_content['title'] == query_title]['genres'].values[0]
+    query_genres_set = set(query_genre.split('|'))
+
+    recommended_df = movie_recommendations(query_title, k=k)
+    recommended_df['genre_match'] = recommended_df['genres'].apply(
+        lambda g: len(set(g.split('|')) & query_genres_set) > 0
+    )
+
+    precision = recommended_df['genre_match'].sum() / k
+    return precision
+
+# Contoh penggunaan evaluasi
+precision = precision_at_k_by_genre("Toy Story (1995)", k=10)
+print(f"Precision@10 (berdasarkan genre mirip): {precision:.2f}")
+
 # Uji Coba Mendapatkan rekomendasi film untuk "Toy Story (1995)"
 movies_content[movies_content.title.eq("Toy Story (1995)")]
 movie_recommendations("Toy Story (1995)")
-
-import pandas as pd
-
-# Misalnya rekomendasi untuk film 'Toy Story'
-recommended_movies = ['A Bug\'s Life', 'Monsters, Inc.', 'Finding Nemo', 'Up', 'Wall-E']
-scores = [0.87, 0.85, 0.83, 0.80, 0.78]
-
-df_recommendations = pd.DataFrame({
-    'Recommended Movie': recommended_movies,
-    'Similarity Score': scores
-})
-
-df_recommendations.style.background_gradient(cmap='Blues')
 
 """## **Collaborative Filtering**
 
