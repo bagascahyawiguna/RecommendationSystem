@@ -128,7 +128,7 @@ Tahapan persiapan data dilakukan secara sistematis agar model yang dibangun dapa
 ### 2. **Pemeriksaan Duplikasi**
 
 * Tidak ditemukan baris duplikat pada seluruh dataset (`movies.csv`, `ratings.csv`, `tags.csv`, `links.csv`).
-* Karena tidak dilakukan tindakan terhadap duplikat, bagian ini **tidak perlu dilaporkan lebih lanjut sesuai masukan reviewer**.
+* Karena tidak dilakukan tindakan terhadap duplikat, bagian ini **diabaikan**.
 
 ### 3. **Penggabungan Dataset**
 
